@@ -7,11 +7,16 @@
 # BlueJ files
 *.ctxt
 
+# Intellij
+.idea
+*.iml
+
 # Mobile Tools for Java (J2ME)
 .mtj.tmp/
 
 # Package Files #
 *.jar
+!gradle-wrapper.jar
 *.war
 *.nar
 *.ear
