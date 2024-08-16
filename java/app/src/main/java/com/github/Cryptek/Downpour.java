@@ -3,12 +3,24 @@
  */
 package com.github.Cryptek;
 
+import java.net.URI;
+import java.net.URISyntaxException;
+import java.util.logging.Logger;
+
 public class Downpour {
-    public String getGreeting() {
-        return "Hello World!";
-    }
+
+    private static final Logger log = Logger.getLogger(Downpour.class.getName());
 
     public static void main(String[] args) {
-        System.out.println(new Downpour().getGreeting());
+        String urlString = args[0];
+        try {
+            URI url = validateAndGetUrl(urlString);
+        } catch (URISyntaxException e) {
+            log.severe("Invalid url " + urlString + " provided! Exiting ...");
+        }
+    }
+
+    public static URI validateAndGetUrl(String urlString) throws URISyntaxException {
+        return new URI(urlString);
     }
 }

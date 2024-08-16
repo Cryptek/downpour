@@ -18,7 +18,6 @@ repositories {
 dependencies {
     // Use JUnit Jupiter for testing.
     testImplementation(libs.junit.jupiter)
-
     testRuntimeOnly("org.junit.platform:junit-platform-launcher")
 
     // This dependency is used by the application.
@@ -40,4 +39,10 @@ application {
 tasks.named<Test>("test") {
     // Use JUnit Platform for unit tests.
     useJUnitPlatform()
+    maxHeapSize = "256M"
+
+    testLogging {
+        events("passed")
+        events("failed")
+    }
 }
