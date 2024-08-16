@@ -42,7 +42,6 @@ tasks.named<Test>("test") {
     maxHeapSize = "256M"
 
     testLogging {
-        events("passed")
-        events("failed")
+        events("passed", "failed")
     }
 }

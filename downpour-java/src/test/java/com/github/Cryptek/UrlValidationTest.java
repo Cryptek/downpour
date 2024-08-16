@@ -19,7 +19,7 @@ class UrlValidationTest {
     }
 
     @Test
-    void wrongUrl_IsInvalid() throws URISyntaxException {
+    void wrongUrl_IsInvalid() {
         String url = "hello world";
         assertThrows(URISyntaxException.class, () -> {
             Downpour.validateAndGetUrl(url);
